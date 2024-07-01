@@ -28,6 +28,9 @@ dependencies:
   '@nx/angular':
     specifier: 19.3.2
     version: 19.3.2(@angular-devkit/build-angular@18.0.0)(@angular-devkit/core@18.0.0)(@angular-devkit/schematics@18.0.0)(@schematics/angular@18.0.0)(@swc-node/register@1.9.1)(@swc/core@1.5.7)(@types/node@18.16.9)(eslint@8.57.0)(nx@19.3.2)(rxjs@7.8.0)(typescript@5.4.2)
+  ngx-liburg-icon:
+    specifier: ^17.0.0
+    version: 17.0.0(@angular/common@18.0.0)(@angular/core@18.0.0)
   reset-css:
     specifier: ^5.0.2
     version: 5.0.2
@@ -3780,33 +3783,33 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@jsonjoy.com/base64@1.1.2(tslib@2.3.0):
+  /@jsonjoy.com/base64@1.1.2(tslib@2.6.2):
     resolution: {integrity: sha512-q6XAnWQDIMA3+FTiOYajoYqySkO+JSat0ytXGSuRdq9uXE7o92gzuQwQM14xaCRlBLGq3v5miDGC4vkVTn54xA==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.6.2
 
-  /@jsonjoy.com/json-pack@1.0.4(tslib@2.3.0):
+  /@jsonjoy.com/json-pack@1.0.4(tslib@2.6.2):
     resolution: {integrity: sha512-aOcSN4MeAtFROysrbqG137b7gaDDSmVrl5mpo6sT/w+kcXpWnzhMjmY/Fh/sDx26NBxyIE7MB1seqLeCAzy9Sg==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
     dependencies:
-      '@jsonjoy.com/base64': 1.1.2(tslib@2.3.0)
-      '@jsonjoy.com/util': 1.2.0(tslib@2.3.0)
+      '@jsonjoy.com/base64': 1.1.2(tslib@2.6.2)
+      '@jsonjoy.com/util': 1.2.0(tslib@2.6.2)
       hyperdyperid: 1.2.0
-      thingies: 1.21.0(tslib@2.3.0)
-      tslib: 2.3.0
+      thingies: 1.21.0(tslib@2.6.2)
+      tslib: 2.6.2
 
-  /@jsonjoy.com/util@1.2.0(tslib@2.3.0):
+  /@jsonjoy.com/util@1.2.0(tslib@2.6.2):
     resolution: {integrity: sha512-4B8B+3vFsY4eo33DMKyJPlQ3sBMpPFUZK2dr3O3rXrOGKKbYG44J0XSFkDo1VOQiri5HFEhIeVvItjR2xcazmg==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.6.2
 
   /@leichtgewicht/ip-codec@2.0.5:
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
@@ -4027,7 +4030,7 @@ packages:
     resolution: {integrity: sha512-1Sia34U4/P++gMr3SsJJSPT4T3QdCOTsimbb3hOW5oo1sp9EuUtW3cI7gjxLODs6cvqU56hUXZRdG/tiYLEwPw==}
     dependencies:
       '@nx/angular': 19.3.2(@angular-devkit/build-angular@18.0.0)(@angular-devkit/core@18.0.0)(@angular-devkit/schematics@18.0.0)(@schematics/angular@18.0.0)(@swc-node/register@1.9.1)(@swc/core@1.5.7)(@types/node@18.16.9)(eslint@8.57.0)(nx@19.3.2)(rxjs@7.8.0)(typescript@5.4.2)
-      tslib: 2.3.0
+      tslib: 2.6.2
     transitivePeerDependencies:
       - '@angular-devkit/build-angular'
       - '@angular-devkit/core'
@@ -4132,7 +4135,7 @@ packages:
     hasBin: true
     dependencies:
       nx: 19.3.2(@swc-node/register@1.9.1)(@swc/core@1.5.7)
-      tslib: 2.3.0
+      tslib: 2.6.2
     transitivePeerDependencies:
       - '@swc-node/register'
       - '@swc/core'
@@ -4560,7 +4563,7 @@ packages:
       chalk: 4.1.2
       detect-port: 1.6.1
       http-server: 14.1.1
-      tslib: 2.3.0
+      tslib: 2.6.2
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -4609,7 +4612,7 @@ packages:
       terser-webpack-plugin: 5.3.10(@swc/core@1.5.7)(esbuild@0.21.3)(webpack@5.91.0)
       ts-loader: 9.5.1(typescript@5.4.2)(webpack@5.92.1)
       tsconfig-paths-webpack-plugin: 4.0.0
-      tslib: 2.3.0
+      tslib: 2.6.2
       webpack: 5.92.1(@swc/core@1.5.7)
       webpack-dev-server: 4.15.2(webpack@5.92.1)
       webpack-node-externals: 3.0.0
@@ -9082,7 +9085,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.3.0
+      tslib: 2.6.2
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -9100,7 +9103,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.3.0
+      tslib: 2.6.2
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -9326,10 +9329,10 @@ packages:
     resolution: {integrity: sha512-bsYSSnirtYTWi1+OPMFb0M048evMKyUYe0EbtuGQgq6BVQM1g1W8/KIUJCCvjgI/El0j6Q4WsmMiBwLUBSw8LA==}
     engines: {node: '>= 4.0.0'}
     dependencies:
-      '@jsonjoy.com/json-pack': 1.0.4(tslib@2.3.0)
-      '@jsonjoy.com/util': 1.2.0(tslib@2.3.0)
-      tree-dump: 1.0.2(tslib@2.3.0)
-      tslib: 2.3.0
+      '@jsonjoy.com/json-pack': 1.0.4(tslib@2.6.2)
+      '@jsonjoy.com/util': 1.2.0(tslib@2.6.2)
+      tree-dump: 1.0.2(tslib@2.6.2)
+      tslib: 2.6.2
 
   /merge-descriptors@1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
@@ -9564,6 +9567,17 @@ packages:
 
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  /ngx-liburg-icon@17.0.0(@angular/common@18.0.0)(@angular/core@18.0.0):
+    resolution: {integrity: sha512-6oUTtP5dP1N4m53f8Ef+oDFl03D9H3rvZ1kDaGdy8WnavH2ezbGMLfYqhvpavUbNXw3lGos3UPtHdffZULgBuA==}
+    peerDependencies:
+      '@angular/common': ^17.0.0
+      '@angular/core': ^17.0.0
+    dependencies:
+      '@angular/common': 18.0.0(@angular/core@18.0.0)(rxjs@7.8.0)
+      '@angular/core': 18.0.0(rxjs@7.8.0)(zone.js@0.14.3)
+      tslib: 2.6.2
+    dev: false
 
   /nice-napi@1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}
@@ -10899,7 +10913,7 @@ packages:
   /rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.6.2
 
   /safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
@@ -11585,13 +11599,13 @@ packages:
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
-  /thingies@1.21.0(tslib@2.3.0):
+  /thingies@1.21.0(tslib@2.6.2):
     resolution: {integrity: sha512-hsqsJsFMsV+aD4s3CWKk85ep/3I9XzYV/IXaSouJMYIoDlgyi11cBhsqYe9/geRfB0YIikBQg6raRaM+nIMP9g==}
     engines: {node: '>=10.18'}
     peerDependencies:
       tslib: ^2
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.6.2
 
   /through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -11641,13 +11655,13 @@ packages:
     dependencies:
       punycode: 2.3.1
 
-  /tree-dump@1.0.2(tslib@2.3.0):
+  /tree-dump@1.0.2(tslib@2.6.2):
     resolution: {integrity: sha512-dpev9ABuLWdEubk+cIaI9cHwRNNDjkBBLXTwI4UCUFdQ5xXKqNXoK4FEciw/vxf+NQ7Cb7sGUyeUtORvHIdRXQ==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.6.2
 
   /tree-kill@1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
