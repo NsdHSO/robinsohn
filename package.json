@@ -2,9 +2,7 @@
   "name": "@rabinsohn/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "pauker": "nx serve pauker"
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.0.0",
