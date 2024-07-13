@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "pauker": "nx serve pauker"
+    "pauker": "nx serve pauker",
+    "build": "nx build pauker"
   },
   "private": true,
   "dependencies": {
