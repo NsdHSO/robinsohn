@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rabinsohn/accessibility": ["libs/accessibility/src/index.ts"],
+      "@rabinsohn/button": ["libs/button/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
