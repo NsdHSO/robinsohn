@@ -3,7 +3,7 @@ import { Directive, input } from '@angular/core';
 @Directive({
   standalone: true,
   host: {
-    '[attr.aria-label]': 'ariaName'
+    '[attr.aria-label]': 'ariaName()'
   }
 })
 export class AddAriaLabelDirective {

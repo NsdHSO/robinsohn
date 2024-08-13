@@ -21,8 +21,6 @@ describe('Add Aria label', () => {
       class TestComponent {
       }
 
-
-
       let component: TestComponent;
       let fixture: ComponentFixture<TestComponent>;
 

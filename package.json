@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "pauker": "nx serve pauker",
-    "build": "nx build pauker"
+    "build": "nx build pauker",
+    "test": "nx run-many -t test"
   },
   "private": true,
   "dependencies": {
