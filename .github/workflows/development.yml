@@ -21,4 +21,5 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - run: pnpm exec nx run-many -t lint test build --all --parallel
       - run: pnpx pkg-pr-new publish
