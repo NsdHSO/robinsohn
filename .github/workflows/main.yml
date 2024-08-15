@@ -34,4 +34,3 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - run: pnpm exec nx run-many -t lint test build --all --parallel
-      - run: pnpx pkg-pr-new publish ./dist/apps/pauker/browser
