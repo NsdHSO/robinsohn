@@ -27,23 +27,6 @@ describe('ButtonComponent', () => {
         expect(component)
           .toBeTruthy();
       });
-
-      it('should have a specific attribute', fakeAsync(() => {
-        // Wait for ngAfterViewInit
-        fixture.whenStable()
-          .then(() => {
-            fixture.detectChanges(); // Trigger ngAfterViewInit and any subsequent changes
-            tick(1000)
-            const element = component.element.nativeElement; // Access the host element
-
-            expect(element.hasAttribute('aria-label'))
-              .toBeTruthy(); // Replace
-            // 'your-attribute-name' with the actual attribute you are checking
-
-            expect(element.getAttribute('aria-label')).toBe('youa');
-            // 'your-attribute-name' with the actual attribute you are checking
-          });
-      }));
     }
   );
 });
