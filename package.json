@@ -5,7 +5,8 @@
   "scripts": {
     "pauker": "nx serve pauker",
     "build": "nx build pauker",
-    "test": "nx run-many -t test"
+    "test": "nx run-many -t test",
+    "text:w": "nx test text --watch --coverage"
   },
   "private": true,
   "dependencies": {
