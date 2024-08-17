@@ -100,16 +100,12 @@ describe('TextDirective', () => {
     const element: ElementRef = {} as ElementRef;
     const renderer2 = {
       addClass(
-        el: any,
-        name: string
       ) {
-
+          // TODO: remove
       },
       setProperty(
-        el: any,
-        name: string,
-        value: any
       ) {
+          // TODO: remove
       },
       appendChild: jest.fn().mockReturnValue(of({}) as any)
     } as unknown as Renderer2;
@@ -150,16 +146,13 @@ describe('TextDirective', () => {
     } as ElementRef;
   const renderer2 = {
     addClass(
-      el: any,
-      name: string
     ) {
-
+      // TODO: remove
     },
     setProperty(
-      el: any,
-      name: string,
-      value: any
     ) {
+      // TODO: remove
+
     },
     appendChild: jest.fn().mockReturnValue(of({}) as any)
   } as unknown as Renderer2;
