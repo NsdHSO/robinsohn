@@ -42,38 +42,38 @@ describe('TextDirective', () => {
   });
   const testCases = [
     {
-      style: StyleTextEnum.Medium_1,
+      style: StyleTextEnum.Medium_3,
       expectedClasses: ['text-6xl', 'text-gray-900'],
       colorTextMock: 'text-gray-900'
     },
     {
       style: StyleTextEnum.Medium_2,
-      expectedClasses: ['text-2xl', 'text-blue-500'],
+      expectedClasses: ['text-3xl', 'text-blue-500'],
       colorTextMock: 'text-blue-500'
     },
     {
-      style: StyleTextEnum.Medium_3,
-      expectedClasses: ['text-1xl', 'text-green-500'],
+      style: StyleTextEnum.Medium_1,
+      expectedClasses: ['text-2xl', 'text-green-500'],
       colorTextMock: 'text-green-500'
     },
     {
-      style: StyleTextEnum.Small_1,
-      expectedClasses: ['text-6xl', 'text-red-500'],
+      style: StyleTextEnum.Small_3,
+      expectedClasses: ['text-5xl', 'text-red-500'],
       colorTextMock: 'text-red-500'
     },
     {
       style: StyleTextEnum.Small_2,
-      expectedClasses: ['text-6xl', 'text-yellow-500'],
+      expectedClasses: ['text-2xl', 'text-yellow-500'],
       colorTextMock: 'text-yellow-500'
     },
     {
-      style: StyleTextEnum.Small_3,
+      style: StyleTextEnum.Small_1,
       expectedClasses: ['text-base', 'text-purple-500'],
       colorTextMock: 'text-purple-500'
     },
     {
-      style: StyleTextEnum.Title_1,
-      elementExpected:'h1',
+      style: StyleTextEnum.Title_3,
+      elementExpected:'h3',
       expectedClasses: ['text-7xl', 'text-pink-500', 'font-bold'],
       colorTextMock: 'text-pink-500'
     },
@@ -84,8 +84,8 @@ describe('TextDirective', () => {
       colorTextMock: 'text-orange-500'
     },
     {
-      style: StyleTextEnum.Title_3,
-      elementExpected:'h3',
+      style: StyleTextEnum.Title_1,
+      elementExpected:'h1',
       expectedClasses: ['text-1xl', 'text-brown-500', 'font-bold'],
       colorTextMock: 'text-brown-500'
     },

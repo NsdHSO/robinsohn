@@ -53,7 +53,7 @@ export class TextDirective implements OnInit {
   /**
    * Input with style
    */
-  styleText = input<StyleTextType>('Medium_1');
+  styleText = input<StyleTextType>(StyleTextEnum.Title_2);
 
   /**
    * Color for text
@@ -91,30 +91,30 @@ export class TextDirective implements OnInit {
   getElementClasses( style: string ): string[] {
     switch (style as StyleTextEnum) {
       case StyleTextEnum.Medium_1:
-        return ['text-6xl', ...this.colorText()
-          .split(' ')
-        ];
-      case StyleTextEnum.Medium_2:
         return ['text-2xl', ...this.colorText()
           .split(' ')
         ];
+      case StyleTextEnum.Medium_2:
+        return ['text-3xl', ...this.colorText()
+          .split(' ')
+        ];
       case StyleTextEnum.Medium_3:
-        return ['text-1xl', ...this.colorText()
+        return ['text-6xl', ...this.colorText()
           .split(' ')
         ];
       case StyleTextEnum.Small_1:
-        return ['text-6xl', ...this.colorText()
-          .split(' ')
-        ];
-      case StyleTextEnum.Small_2:
-        return ['text-6xl', ...this.colorText()
-          .split(' ')
-        ];
-      case StyleTextEnum.Small_3:
         return ['text-base', ...this.colorText()
           .split(' ')
         ];
-      case StyleTextEnum.Title_1:
+      case StyleTextEnum.Small_2:
+        return ['text-2xl', ...this.colorText()
+          .split(' ')
+        ];
+      case StyleTextEnum.Small_3:
+        return ['text-5xl', ...this.colorText()
+          .split(' ')
+        ];
+      case StyleTextEnum.Title_3:
         return ['text-7xl', ...this.colorText()
           .split(' '), 'font-bold'
         ];
@@ -122,7 +122,7 @@ export class TextDirective implements OnInit {
         return ['text-3xl', ...this.colorText()
           .split(' '), 'font-bold'
         ];
-      case StyleTextEnum.Title_3:
+      case StyleTextEnum.Title_1:
         return ['text-1xl', ...this.colorText()
           .split(' '), 'font-bold'
         ];
