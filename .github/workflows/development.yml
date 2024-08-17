@@ -1,25 +1,31 @@
 name: Publish Any Commit
 on: [push, pull_request]
 
+permissions:
+  actions: read
+  contents: read
+
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - run: corepack enable
-      - uses: actions/setup-node@v4
+      # Connect your workspace on nx.app and uncomment this to enable task distribution.
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "build" targets have been requested
+      # - run: pnpm exec nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="build"
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      # Cache node_modules
+      - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm build
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - uses: nrwl/nx-set-shas@v4
 
       - run: pnpm exec nx run-many -t lint test build --all --parallel
-      - run: pnpx pkg-pr-new publish
