@@ -58,7 +58,7 @@ export class TextDirective implements OnInit {
   /**
    * Color for text
    */
-  colorText = input<string>('text-zinc-900 dark:text-indigo-50');
+  colorText = input<string>('text-slate-800 dark:text-indigo-50');
 
   ngOnInit(): void {
     const hostElement = this._elementRef.nativeElement;
