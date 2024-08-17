@@ -2,7 +2,6 @@ import { StyleTextEnum, TextDirective } from './text.directive';
 import { ElementRef, Renderer2 } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
-import { expect } from '@playwright/test';
 import { of } from 'rxjs';
 
 describe('TextDirective', () => {
@@ -140,7 +139,7 @@ describe('TextDirective', () => {
 
 
   });
-  fit(`should called ng on init`, () => {
+  it(`should called ng on init`, () => {
 
     const element: ElementRef = {
       nativeElement: {
@@ -178,9 +177,6 @@ describe('TextDirective', () => {
 
     directive.ngOnInit()
 
-    expect(console.error).toHaveBeenCalled()
-
-
-
+    expect(console.error).toHaveBeenCalledWith('No content found inside <lib-text>. Please check the content projection.')
   });
 });
