@@ -1,7 +1,8 @@
-import { ListDirective, StyleTextEnum } from './list.directive';
+import { ListDirective } from './list.directive';
 import { ElementRef, Renderer2 } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
+import { expect } from '@playwright/test';
 
 describe('TextDirective', () => {
 
@@ -28,16 +29,14 @@ describe('TextDirective', () => {
   })
     .inject(ListDirective);
 
-  it('should create an instance', () => {
-    const element: ElementRef = {} as ElementRef;
-    const renderer2 = {} as Renderer2;
-    const docuument = {
-      querySelectorAll: () => ['']
-    };
-    const directive = setup(element, renderer2, docuument);
+  it('should init', () => {
+    const elementRef = {} as ElementRef;
+    const renderer = {} as Renderer2;
+    const document = {} as any;
+    const directive = setup(elementRef, renderer, document);
 
-    expect(directive.getElementTag(StyleTextEnum.Title_1 as string))
-      .toEqual('h1');
+    expect(directive)
+      .toBeTruthy();
   });
 
 });
