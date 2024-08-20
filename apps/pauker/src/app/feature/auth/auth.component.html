@@ -7,7 +7,18 @@ ariaName="Ivan"
 
 <lib-text
   ariaName="Ivan"
+  [styleList]="'Bullet_List_Checkmarks'"
 >
   Officially recognized by the Duden dictionary as the longest word in German, Kraftfahrzeughaftpflichtversicherung is a 36 letter word for motor vehicle liability insuran
 </lib-text>
 
+@for (x of [].constructor(3); track x ){
+  <ng-container>
+    <lib-text
+      ariaName="ands"
+      styleList="Default"
+    >
+      {{x}}Ivan
+    </lib-text>
+  </ng-container>
+}

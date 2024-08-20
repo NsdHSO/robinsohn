@@ -1,9 +1,9 @@
 import {
+  AfterViewInit,
   Directive,
   ElementRef,
   inject,
   input,
-  OnInit,
   Renderer2
 } from '@angular/core';
 import { AddAriaLabelDirective } from '@rabinsohn/accessibility';
@@ -37,7 +37,7 @@ export enum StyleTextEnum {
   standalone: true,
   hostDirectives: [{ directive: AddAriaLabelDirective, inputs: ['ariaName'] }]
 })
-export class TextDirective implements OnInit {
+export class TextDirective implements AfterViewInit {
   /**
    * Instance of element Ref
    */
@@ -60,7 +60,7 @@ export class TextDirective implements OnInit {
    */
   colorText = input<string>('text-slate-800 dark:text-indigo-50');
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     const hostElement = this._elementRef.nativeElement;
     const content = hostElement.innerText.trim();
 
