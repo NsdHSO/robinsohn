@@ -53,7 +53,7 @@ export class TextDirective implements OnInit {
   /**
    * Input with style
    */
-  styleText = input<StyleTextType>(StyleTextEnum.Title_2);
+  styleText = input<StyleTextType>(StyleTextEnum.Small_1);
 
   /**
    * Color for text
@@ -150,5 +150,6 @@ export class TextDirective implements OnInit {
 
     // Append the newly created element
     this._renderer2.appendChild(this._elementRef.nativeElement, element);
+    this._renderer2.setStyle(this._elementRef.nativeElement.firstChild, 'hyphens', 'auto')
   }
 }
