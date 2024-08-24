@@ -62,7 +62,7 @@ export class TextDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const hostElement = this._elementRef.nativeElement;
-    const content = hostElement.innerText.trim();
+    const content = hostElement.innerText?.trim();
 
     if (!content) {
       console.error(

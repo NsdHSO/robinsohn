@@ -1,24 +1,12 @@
-<lib-text
-ariaName="Ivan"
->
-  În literatura română, specia este bogat reprezentată atât în sfera oralității – Pe-o Gură de Rai / Miorița (cu peste 1600 de variante; cele din Crișana – Ieste-un munte cu oi multe, Sântu-și trei păcurărași etc. – au conservat elementele de ceremonial / ritual eroic-funerar ce de-aproape șase milenii se datează în spațiul Daciei / Dacoromâniei – arheologic și cu C14 –, încă din orizontul cultural / civilizatoriu al anului 3400 î. Hr. – cf. Ion Pachia Tatomirescu, Istoria religiilor, vol. I, Timișoara, Editura Aethicus, 2001, p. 222), Meșterul Manole (conservând mitul fundamental pelasgo-thraco-dacic, sau dacoromânesc, al jertfei zidirii, atestat arheologic în Dacia / Dacoromânia, de-aproape șapte milenii, mai exact, din orizontul anului 4950 î. Hr.), Soarele și Luna, Toma Alimoș , Corbea, Iancu Jianu, Radu Calomfirescu, Pintea Viteazul, Constantin Brâncoveanu, Ghiță Cătănuță etc. –, cât și în sfera cultă – Andrii Popa de Vasile Alecsandri, Nunta Zamfirei de George Coșbuc, Pintea de Șt O. Iosif, Rică de Miron Radu Paraschivescu, Balada trupului care s-a frânt pe roată de Radu Gyr, Mistrețul cu colți de argint de Ștefan Augustin Doinaș, Moartea căprioarei de Nicolae Labiș, Balada neîncolțită de Nichita Stănescu, Jiana de Ion Pachia Tatomirescu, Balada lui Ion de Octavian Blaga etc.
-</lib-text>
+<div listItem
+     styleList="Default">
+  @for (x of [].constructor(10); track index; let index =$index) {
 
-
-<lib-text
-  ariaName="Ivan"
-  [styleList]="'Bullet_List_Checkmarks'"
->
-  Officially recognized by the Duden dictionary as the longest word in German, Kraftfahrzeughaftpflichtversicherung is a 36 letter word for motor vehicle liability insuran
-</lib-text>
-
-@for (x of [].constructor(3); track x ){
-  <ng-container>
     <lib-text
+
       ariaName="ands"
-      styleList="Default"
     >
-      {{x}}Ivan
+      {{ x }}Ivan
     </lib-text>
-  </ng-container>
-}
+  }
+</div>

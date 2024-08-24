@@ -168,7 +168,7 @@ describe('TextDirective', () => {
     jest.spyOn(console as any, 'error').mockReturnValue('sfsf')
     const directive = setup(element, renderer2, docuument);
 
-    directive.ngOnInit()
+    directive.ngAfterViewInit()
 
     expect(console.error).toHaveBeenCalledWith('No content found inside <lib-text>. Please check the content projection.')
   });

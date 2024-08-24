@@ -32,7 +32,9 @@ describe('TextDirective', () => {
   it('should init', () => {
     const elementRef = {} as ElementRef;
     const renderer = {} as Renderer2;
-    const document = {} as any;
+    const document = {
+      querySelectorAll: () => ['']
+    } as any;
     const directive = setup(elementRef, renderer, document);
 
     expect(directive)
