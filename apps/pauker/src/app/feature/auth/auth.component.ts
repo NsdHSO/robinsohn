@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { AuthService } from './services/auth.service';
 import { ButtonComponent } from '@rabinsohn/button';
 import { ListDirective, TextComponent, TextDirective } from '@rabinsohn/text';
+import { TuiButton, TuiLoader, tuiLoaderOptionsProvider } from '@taiga-ui/core';
 
 
 @Component({
@@ -12,10 +13,18 @@ import { ListDirective, TextComponent, TextDirective } from '@rabinsohn/text';
   standalone: true,
   imports: [
     CommonModule, MatIcon, ButtonComponent, TextDirective, TextComponent,
-    ListDirective
+    ListDirective, TuiLoader, TuiButton
   ],
   templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss', providers: [AuthService]
+  styleUrl: './auth.component.scss',
+  providers: [
+    AuthService, tuiLoaderOptionsProvider({
+      size: 'l',
+      inheritColor: false,
+      overlay: true
+    })
+  ]
+
 })
 export class AuthComponent implements OnInit {
   /**
