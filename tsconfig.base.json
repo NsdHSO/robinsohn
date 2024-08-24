@@ -17,6 +17,9 @@
     "paths": {
       "@rabinsohn/accessibility": ["libs/accessibility/src/index.ts"],
       "@rabinsohn/button": ["libs/button/src/index.ts"],
+      "@rabinsohn/over-write-taiga-spiner": [
+        "libs/over-write-taiga-spiner/src/index.ts"
+      ],
       "@rabinsohn/text": ["libs/text/src/index.ts"]
     }
   },

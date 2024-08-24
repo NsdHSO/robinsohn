@@ -6,6 +6,9 @@ import { AuthService } from './services/auth.service';
 import { ButtonComponent } from '@rabinsohn/button';
 import { ListDirective, TextComponent, TextDirective } from '@rabinsohn/text';
 import { TuiButton, TuiLoader, tuiLoaderOptionsProvider } from '@taiga-ui/core';
+import {
+  OverWriteTigaSpliner
+} from '../../../../../../libs/over-write-taiga-spiner/src/lib/over-write-taiga-spliner.directive';
 
 
 @Component({
@@ -13,7 +16,7 @@ import { TuiButton, TuiLoader, tuiLoaderOptionsProvider } from '@taiga-ui/core';
   standalone: true,
   imports: [
     CommonModule, MatIcon, ButtonComponent, TextDirective, TextComponent,
-    ListDirective, TuiLoader, TuiButton
+    ListDirective, TuiLoader, TuiButton, OverWriteTigaSpliner
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss',
