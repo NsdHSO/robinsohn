@@ -1,0 +1,25 @@
+<ng-container *ngFor="let valueIoan of arrayPerformance(); trackBy byIndex">
+  <div style="color: white">
+    <lib-text ariaName="ariaName">
+      {{ valueIoan.name }}
+    </lib-text>
+  </div>
+</ng-container>
+@for (value of arrayPerformance(); track value.name) {
+  <div style="color: white">
+    {{ value.name }}
+  </div>
+}
+
+
+<button (click)="addingSomeOnIndex2()"
+        style="background: #0074D9; padding: .3rem; border-radius: 9rem; margin: .3rem"
+>
+  <lib-text ariaName="preess meee">
+    Press me change value
+  </lib-text>
+</button>
+
+<button>
+
+</button>

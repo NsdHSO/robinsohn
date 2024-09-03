@@ -9,6 +9,7 @@ import { TuiButton, TuiLoader, tuiLoaderOptionsProvider } from '@taiga-ui/core';
 import {
   OverWriteTigaSpliner
 } from '../../../../../../libs/over-write-taiga-spiner/src/lib/over-write-taiga-spliner.directive';
+import { TestingServiceComponent } from '@rabinsohn/testing-service-intance';
 
 
 @Component({
@@ -16,7 +17,8 @@ import {
   standalone: true,
   imports: [
     CommonModule, MatIcon, ButtonComponent, TextDirective, TextComponent,
-    ListDirective, TuiLoader, TuiButton, OverWriteTigaSpliner
+    ListDirective, TuiLoader, TuiButton, OverWriteTigaSpliner,
+    TestingServiceComponent
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss',

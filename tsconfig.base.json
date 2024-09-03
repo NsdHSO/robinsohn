@@ -20,6 +20,10 @@
       "@rabinsohn/over-write-taiga-spiner": [
         "libs/over-write-taiga-spiner/src/index.ts"
       ],
+      "@rabinsohn/template-driven": ["libs/template-driven/src/index.ts"],
+      "@rabinsohn/testing-service-intance": [
+        "libs/testing-service-intance/src/index.ts"
+      ],
       "@rabinsohn/text": ["libs/text/src/index.ts"]
     }
   },

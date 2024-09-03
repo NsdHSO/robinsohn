@@ -3,8 +3,9 @@ import {
   Directive,
   ElementRef,
   inject,
-  input,
-  Renderer2
+  input, OnChanges,
+  Renderer2,
+  SimpleChanges
 } from '@angular/core';
 import { AddAriaLabelDirective } from '@rabinsohn/accessibility';
 import { DOCUMENT } from '@angular/common';
@@ -37,7 +38,10 @@ export enum StyleTextEnum {
   standalone: true,
   hostDirectives: [{ directive: AddAriaLabelDirective, inputs: ['ariaName'] }]
 })
-export class TextDirective implements AfterViewInit {
+export class TextDirective implements AfterViewInit, OnChanges {
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
   /**
    * Instance of element Ref
    */
