@@ -73,19 +73,19 @@ describe('TextDirective', () => {
     },
     {
       style: StyleTextEnum.Title_3,
-      elementExpected:'h3',
+      elementExpected: 'h3',
       expectedClasses: ['text-7xl', 'text-pink-500', 'font-bold'],
       colorTextMock: 'text-pink-500'
     },
     {
       style: StyleTextEnum.Title_2,
-      elementExpected:'h2',
+      elementExpected: 'h2',
       expectedClasses: ['text-3xl', 'text-orange-500', 'font-bold'],
       colorTextMock: 'text-orange-500'
     },
     {
       style: StyleTextEnum.Title_1,
-      elementExpected:'h1',
+      elementExpected: 'h1',
       expectedClasses: ['text-1xl', 'text-brown-500', 'font-bold'],
       colorTextMock: 'text-brown-500'
     },
@@ -96,18 +96,22 @@ describe('TextDirective', () => {
     }
   ];
 
-  testCases.forEach(( { style, expectedClasses, colorTextMock, elementExpected } ) => {
+  testCases.forEach(( {
+                        style,
+                        expectedClasses,
+                        colorTextMock,
+                        elementExpected
+                      } ) => {
     const element: ElementRef = {} as ElementRef;
     const renderer2 = {
-      addClass(
-      ) {
-          // TODO: remove
+      addClass() {
+        // TODO: remove
       },
-      setProperty(
-      ) {
-          // TODO: remove
+      setProperty() {
+        // TODO: remove
       },
-      appendChild: jest.fn().mockReturnValue(of({}) as any)
+      appendChild: jest.fn()
+        .mockReturnValue(of({}) as any)
     } as unknown as Renderer2;
     const docuument = {
       createElement: () => '',
@@ -130,7 +134,7 @@ describe('TextDirective', () => {
       const resultElementExpected = directive.getElementTag(style);
 
       expect(resultElementExpected)
-        .toEqual(elementExpected?? 'p');
+        .toEqual(elementExpected ?? 'p');
     });
 
 
@@ -144,32 +148,41 @@ describe('TextDirective', () => {
         }
       }
     } as ElementRef;
-  const renderer2 = {
-    addClass(
-    ) {
-      // TODO: remove
-    },
-    setProperty(
-    ) {
-      // TODO: remove
+    const renderer2 = {
+      addClass() {
+        // TODO: remove
+      },
+      setStyle() {
+        // TODO: remove
 
-    },
-    appendChild: jest.fn().mockReturnValue(of({}) as any)
-  } as unknown as Renderer2;
-  const docuument = {
-    createElement: () => '',
-    querySelectorAll: () => [''],
-    nativeElement: {
-      innerText: {
-        trim: () => 'fsdf'
+      },
+
+      setProperty() {
+        // TODO: remove
+
+      },
+      appendChild: jest.fn()
+        .mockReturnValue(of({}) as any)
+    } as unknown as Renderer2;
+    const docuument = {
+      createElement: () => ({
+        innerText: ''
+      }),
+      querySelectorAll: () => [''],
+      nativeElement: {
+        innerText: {
+          trim: () => 'fsdf'
+        }
       }
-    }
-  };
-    jest.spyOn(console as any, 'error').mockReturnValue('sfsf')
+    };
+    jest.spyOn(console as any, 'error')
+      .mockReturnValue('sfsf');
     const directive = setup(element, renderer2, docuument);
 
-    directive.ngAfterViewInit()
+    directive.ngAfterViewInit();
 
-    expect(console.error).toHaveBeenCalledWith('No content found inside <lib-text>. Please check the content projection.')
+    expect(console.error)
+      .toHaveBeenCalledWith(
+        'No content found inside <lib-text>. Please check the content projection.');
   });
 });

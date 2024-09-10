@@ -1,14 +1,17 @@
 import {
   AfterViewInit,
+  DestroyRef,
   Directive,
   ElementRef,
   inject,
-  input, OnChanges,
-  Renderer2,
-  SimpleChanges
+  Input,
+  input,
+  Renderer2
 } from '@angular/core';
 import { AddAriaLabelDirective } from '@rabinsohn/accessibility';
 import { DOCUMENT } from '@angular/common';
+import { Observable, tap } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 export type StyleTextType =
   'Title_1'
@@ -38,10 +41,7 @@ export enum StyleTextEnum {
   standalone: true,
   hostDirectives: [{ directive: AddAriaLabelDirective, inputs: ['ariaName'] }]
 })
-export class TextDirective implements AfterViewInit, OnChanges {
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-  }
+export class TextDirective implements AfterViewInit {
   /**
    * Instance of element Ref
    */
@@ -55,28 +55,40 @@ export class TextDirective implements AfterViewInit, OnChanges {
    */
   private _document = inject(DOCUMENT);
   /**
+   *
+   */
+  private _destroyed$ = inject(DestroyRef);
+  /**
+   *
+   */
+  @Input()
+  reactiveValueChange?: Observable<unknown>;
+  /**
    * Input with style
    */
   styleText = input<StyleTextType>(StyleTextEnum.Small_1);
-
   /**
    * Color for text
    */
   colorText = input<string>('text-slate-800 dark:text-indigo-50');
 
   ngAfterViewInit(): void {
-    const hostElement = this._elementRef.nativeElement;
-    const content = hostElement.innerText?.trim();
+    this.verifiedIfIsReactiveOrNot();
+  }
 
-    if (!content) {
-      console.error(
-        'No content found inside <lib-text>. Please check the content projection.');
-      return;
+  /**
+   * Subscribe on value changes and applied the contet
+   * @private
+   */
+  private verifiedIfIsReactiveOrNot() {
+    if (this.reactiveValueChange !== undefined) {
+    this.reactiveValueChange?.pipe(tap(( vlaue: unknown ) => {
+        this.checkContentAndApplied(vlaue);
+      })
+      , takeUntilDestroyed(this._destroyed$))
+      .subscribe();
     }
-
-    const elementTag = this.getElementTag(this.styleText());
-    const elementClasses = this.getElementClasses(this.styleText());
-    this.createStyledElement(elementTag, elementClasses, content);
+    this.checkContentAndApplied();
   }
 
   getElementTag( style: string ): string {
@@ -95,40 +107,49 @@ export class TextDirective implements AfterViewInit, OnChanges {
   getElementClasses( style: string ): string[] {
     switch (style as StyleTextEnum) {
       case StyleTextEnum.Medium_1:
-        return ['text-2xl', ...this.colorText()
-          .split(' ')
+        return [
+          'text-2xl', ...this.colorText()
+            .split(' ')
         ];
       case StyleTextEnum.Medium_2:
-        return ['text-3xl', ...this.colorText()
-          .split(' ')
+        return [
+          'text-3xl', ...this.colorText()
+            .split(' ')
         ];
       case StyleTextEnum.Medium_3:
-        return ['text-6xl', ...this.colorText()
-          .split(' ')
+        return [
+          'text-6xl', ...this.colorText()
+            .split(' ')
         ];
       case StyleTextEnum.Small_1:
-        return ['text-base', ...this.colorText()
-          .split(' ')
+        return [
+          'text-base', ...this.colorText()
+            .split(' ')
         ];
       case StyleTextEnum.Small_2:
-        return ['text-2xl', ...this.colorText()
-          .split(' ')
+        return [
+          'text-2xl', ...this.colorText()
+            .split(' ')
         ];
       case StyleTextEnum.Small_3:
-        return ['text-5xl', ...this.colorText()
-          .split(' ')
+        return [
+          'text-5xl', ...this.colorText()
+            .split(' ')
         ];
       case StyleTextEnum.Title_3:
-        return ['text-7xl', ...this.colorText()
-          .split(' '), 'font-bold'
+        return [
+          'text-7xl', ...this.colorText()
+            .split(' '), 'font-bold'
         ];
       case StyleTextEnum.Title_2:
-        return ['text-3xl', ...this.colorText()
-          .split(' '), 'font-bold'
+        return [
+          'text-3xl', ...this.colorText()
+            .split(' '), 'font-bold'
         ];
       case StyleTextEnum.Title_1:
-        return ['text-1xl', ...this.colorText()
-          .split(' '), 'font-bold'
+        return [
+          'text-1xl', ...this.colorText()
+            .split(' '), 'font-bold'
         ];
       // Add cases for other styles as needed
       default:
@@ -154,6 +175,36 @@ export class TextDirective implements AfterViewInit, OnChanges {
 
     // Append the newly created element
     this._renderer2.appendChild(this._elementRef.nativeElement, element);
-    this._renderer2.setStyle(this._elementRef.nativeElement.firstChild, 'hyphens', 'auto')
+    this._renderer2.setStyle(this._elementRef.nativeElement.firstChild,
+      'hyphens',
+      'auto'
+    );
+  }
+
+  /**
+   * Check content and remove all elements after applied the style and content
+   * @private
+   */
+  private checkContentAndApplied( value?: unknown ) {
+    const hostElement = this._elementRef.nativeElement;
+    const content = hostElement.innerText?.trim();
+
+    if (!content) {
+      console.error(
+        'No content found inside <lib-text>. Please check the content projection.');
+    }
+
+    this.appliedStyleAndAppended(value?? content);
+  }
+
+  /**
+   * Applied style and append the content on what element choose
+   * @param content
+   * @private
+   */
+  private appliedStyleAndAppended( content: string| any ) {
+    const elementTag = this.getElementTag(this.styleText());
+    const elementClasses = this.getElementClasses(this.styleText());
+    this.createStyledElement(elementTag, elementClasses, content);
   }
 }

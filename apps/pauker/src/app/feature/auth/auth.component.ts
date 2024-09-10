@@ -10,6 +10,7 @@ import {
   OverWriteTigaSpliner
 } from '../../../../../../libs/over-write-taiga-spiner/src/lib/over-write-taiga-spliner.directive';
 import { TestingServiceComponent } from '@rabinsohn/testing-service-intance';
+import { TemplateDrivenComponent } from '@rabinsohn/template-driven';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { TestingServiceComponent } from '@rabinsohn/testing-service-intance';
   imports: [
     CommonModule, MatIcon, ButtonComponent, TextDirective, TextComponent,
     ListDirective, TuiLoader, TuiButton, OverWriteTigaSpliner,
-    TestingServiceComponent
+    TestingServiceComponent, TemplateDrivenComponent
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss',

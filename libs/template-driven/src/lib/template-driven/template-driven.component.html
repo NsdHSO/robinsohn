@@ -1,1 +1,25 @@
-<p>template-driven works!</p>
+<form #myContainerForTiti='ngForm' (ngSubmit)="onSubmit(myContainerForTiti)">
+  <div class="flex gap-x-4">
+    <label for="description">
+      <lib-text ariaName="ivan">
+        Your input
+      </lib-text>
+    </label>
+    <input type="text" id="description"
+           #fname="ngModel" ngModel
+           name="firstName"
+    >
+  </div>
+  <button type="submit" class="bg-blue-950 p-1 m-1 rounded">
+    <lib-text>
+      fsdfsdf
+    </lib-text>
+  </button>
+</form>
+<pre>
+  <lib-text ariaName="ariaName"
+            styleText="Title_3"
+            [reactiveValueChange]="myContainerForTiti.form.controls['firstName']?.valueChanges">
+{{ (myContainerForTiti.form.valueChanges|async).firstName }}
+  </lib-text>
+</pre>
