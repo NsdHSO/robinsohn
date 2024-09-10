@@ -94,11 +94,11 @@ export class TextDirective implements AfterViewInit {
   getElementTag( style: string ): string {
     switch (style as StyleTextType) {
       case StyleTextEnum.Title_1:
-        return 'h1';
+        return 'h3';
       case StyleTextEnum.Title_2:
         return 'h2';
       case StyleTextEnum.Title_3:
-        return 'h3';
+        return 'h1';
       default:
         return 'p';
     }
