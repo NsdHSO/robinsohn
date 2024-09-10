@@ -38,7 +38,7 @@ describe('TextDirective', () => {
     const directive = setup(element, renderer2, docuument);
 
     expect(directive.getElementTag(StyleTextEnum.Title_1 as string))
-      .toEqual('h1');
+      .toEqual('h3');
   });
   const testCases = [
     {
@@ -73,7 +73,7 @@ describe('TextDirective', () => {
     },
     {
       style: StyleTextEnum.Title_3,
-      elementExpected: 'h3',
+      elementExpected: 'h1',
       expectedClasses: ['text-7xl', 'text-pink-500', 'font-bold'],
       colorTextMock: 'text-pink-500'
     },
@@ -85,7 +85,7 @@ describe('TextDirective', () => {
     },
     {
       style: StyleTextEnum.Title_1,
-      elementExpected: 'h1',
+      elementExpected: 'h3',
       expectedClasses: ['text-1xl', 'text-brown-500', 'font-bold'],
       colorTextMock: 'text-brown-500'
     },

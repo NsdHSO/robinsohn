@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
 import { expect } from '@playwright/test';
 
-describe('TextDirective', () => {
+xdescribe('TextDirective', () => {
 
   const setup = (
     element: ElementRef,

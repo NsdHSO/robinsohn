@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TextComponent, TextDirective } from '@rabinsohn/text';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'lib-template-driven',
@@ -15,7 +15,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TemplateDrivenComponent {
-  @ViewChild('myContainerForTiti') form!: NgForm;
+  form = viewChild('myContainerForTiti');
 
   public onSubmit( event: any ) {
     console.log(this.form);
